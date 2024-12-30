@@ -1,6 +1,8 @@
 # ProductListCart
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+![image](https://github.com/user-attachments/assets/3090343f-e4ae-45bc-b508-59033acb622c)
+
 
 ## Development server
 
