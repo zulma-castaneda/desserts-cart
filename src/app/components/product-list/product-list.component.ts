@@ -15,5 +15,19 @@ export class ProductListComponent implements OnInit {
 
   constructor(private http: HttpClient, private cartService: CartService) {}
   //TODO add client
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http.get('assets/data.json').subscribe({
+      next: (data: any) => {
+        this.products = data;
+        console.log('Products to load', data);
+      },
+      error: (error) => {
+        console.error('Error loading products', error);
+      },
+    });
+  }
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+  }
 }

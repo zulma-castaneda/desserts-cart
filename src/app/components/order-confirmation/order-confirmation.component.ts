@@ -8,4 +8,27 @@ import { CommonModule } from '@angular/common';
   templateUrl: './order-confirmation.component.html',
   styleUrls: ['./order-confirmation.component.scss'],
 })
-export class OrderConfirmationComponent {}
+export class OrderConfirmationComponent {
+  cartItems: any[] = [];
+  isVisible = false;
+  orderTotal = 0;
+  constructor(private cartService: CartService) {}
+  ngOnInit(): void {
+    this.cartService.getOrderConfirmationStatus().subscribe((status) => {
+      this.isVisible = status;
+      if (status) {
+        this.cartService.getCartItems().subscribe((items) => {
+          this.cartItems = items;
+        });
+        this.cartService.getOrderTotal().subscribe((total) => {
+          this.orderTotal = total;
+        });
+      }
+    });
+  }
+
+  startNewOrder() {
+    this.cartService.startNewOrder();
+    this.isVisible = false;
+  }
+}
