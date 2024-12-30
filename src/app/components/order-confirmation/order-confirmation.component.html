@@ -1,0 +1,26 @@
+<div *ngIf="isVisible" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="icon-check">✔️</div>
+      <h1>Order Confirmed</h1>
+      <p>We hope you enjoy your food!</p>
+    </div>
+    <div class="modal-body">
+      <div *ngFor="let item of cartItems" class="modal-item">
+        <img [src]="item.image" alt="{{ item.name }}" class="product-image" />
+        <div class="item-details">
+          <p class="item-name">{{ item.name }}</p>
+          <p class="item-quantity">
+            {{ item.quantity }}x &#64; &#36;{{ item.price }}
+          </p>
+        </div>
+        <p class="item-total">${{ item.quantity * item.price }}</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="order-total-label">Order Total</p>
+      <p class="order-total">${{ orderTotal }}</p>
+      <button (click)="startNewOrder()">Start New Order</button>
+    </div>
+  </div>
+</div>

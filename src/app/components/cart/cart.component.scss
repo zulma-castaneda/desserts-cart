@@ -1,0 +1,132 @@
+@import "../../../styles/variables";
+
+.cart {
+  background: $rose-50;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+
+  h1 {
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    font-size: 20px;
+    color: $rose-900;
+    margin-bottom: 16px;
+  }
+
+  .empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 0;
+
+    .empty-cart-image {
+      width: 120px;
+      height: auto;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-family: $font-family;
+      font-weight: $font-weight-medium;
+      font-size: 14px;
+      color: $rose-400;
+    }
+  }
+
+  .cart-items {
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid $rose-300;
+
+      .item-details {
+        .item-name {
+          font-family: $font-family;
+          font-weight: $font-weight-medium;
+          font-size: 16px;
+          color: $rose-500;
+          margin-bottom: 4px;
+        }
+
+        .item-quantity {
+          font-family: $font-family;
+          font-size: 14px;
+          color: $rose-400;
+
+          span {
+            font-weight: $font-weight-medium;
+            color: $rose-900;
+          }
+        }
+      }
+
+      .remove-item {
+        background: none;
+        border: none;
+        color: $rose-400;
+        font-size: 18px;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  .cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    font-size: 18px;
+    color: $rose-900;
+    border-top: 1px solid $rose-300;
+  }
+
+  .cart-footer {
+    margin-top: 16px;
+    text-align: center;
+
+    .delivery-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $font-family;
+      font-size: 14px;
+      color: $rose-400;
+      margin-bottom: 12px;
+
+      .icon {
+        margin-right: 8px;
+      }
+    }
+
+    .confirm-order {
+      background: $red;
+      color: $rose-50;
+      font-family: $font-family;
+      font-weight: $font-weight-bold;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken($red, 10%);
+      }
+    }
+  }
+}

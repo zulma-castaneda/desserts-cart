@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Tiramisu",
+    "price": 25,
+    "image": "assets/product1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Strawberry waffle",
+    "price": 35,
+    "image": "assets/product2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Baklava",
+    "price": 30,
+    "image": "assets/product3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Brownie",
+    "price": 20,
+    "image": "assets/product4.jpg"
+  }
+]
